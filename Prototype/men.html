@@ -1,0 +1,90 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: men.html
+    Purpose: Displays all men's shoes with search, filtering, and product listing cards.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Men's Shoes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+
+    <div class="search-bar">
+        <input type="text" id="men-search" class="search-input" placeholder="Search men's shoes...">
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link" href="login.html">Login</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<nav class="category-nav" aria-label="Category navigation">
+    <ul>
+        <li><a href="men.html"><strong>Men's Shoes</strong></a></li>
+        <li><a href="women.html">Women's Shoes</a></li>
+        <li><a href="kids.html">Kid's Shoes</a></li>
+        <li><a href="sell.html">Sell on Jutta</a></li>
+    </ul>
+</nav>
+
+<div class="page-wrapper">
+    <main id="main">
+        <section class="main-card men-layout">
+
+            <!-- LEFT SIDE CATEGORY NAV -->
+            <aside class="side-nav" aria-label="Men shoe categories">
+                <h3>Men's Categories</h3>
+                <ul id="men-type-filter">
+                    <li><button type="button" data-type="" class="side-nav-btn active">All</button></li>
+                    <li><button type="button" data-type="Sneaker" class="side-nav-btn">Sneakers</button></li>
+                    <li><button type="button" data-type="Boot" class="side-nav-btn">Boots</button></li>
+                    <li><button type="button" data-type="Running Shoe" class="side-nav-btn">Running Shoes</button></li>
+                </ul>
+            </aside>
+
+            <!-- MAIN CONTENT LISTINGS -->
+            <div class="men-content">
+                <h2 class="products-title">Men's Shoes and Sneakers</h2>
+
+                <div class="products-grid" id="men-grid" aria-live="polite">
+                    <!-- JS will inject product cards here -->
+                </div>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/men.js"></script>
+
+</body>
+</html>

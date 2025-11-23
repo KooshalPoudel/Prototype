@@ -1,0 +1,124 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: index.html
+    Purpose: Homepage showing navigation and featured shoe slider.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Shoe Marketplace</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+
+<!-- Skip link for accessibility -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<!-- Top navigation bar -->
+<header>
+    <div class="logo">Jutta</div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link active" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link" href="login.html">Login</a></li>
+            <li><a class="nav-btn-link" href="profile.html">My Profile</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Category navigation bar -->
+<nav class="category-nav" aria-label="Category navigation">
+    <ul>
+        <li><a href="men.html">Men's Shoes</a></li>
+        <li><a href="women.html">Women's Shoes</a></li>
+        <li><a href="kids.html">Kid's Shoes</a></li>
+        <li><a href="sell.html">Sell on Jutta</a></li>
+    </ul>
+</nav>
+
+<div class="page-wrapper">
+    <main id="main">
+
+        <!-- Featured item slider -->
+        <section class="main-card">
+            <h2 class="products-title">Featured Items:</h2>
+
+            <div class="hero-slider">
+
+                <!-- Left arrow -->
+                <button class="hero-nav-btn" id="hero-prev" aria-label="Previous shoe">
+                    &#8249;
+                </button>
+
+                <!-- Center dynamic content -->
+                <div class="hero-main">
+
+                    <div class="hero-image-frame">
+                        <img id="hero-image" src="" alt="" class="hero-img">
+                    </div>
+
+                    <div class="hero-info">
+                        <p class="hero-category" id="hero-category"></p>
+                        <h1 class="hero-title" id="hero-title"></h1>
+                        <p class="hero-price" id="hero-price"></p>
+
+                        <p class="hero-text">
+                            <span class="label">Type:</span>
+                            <span id="hero-type"></span>
+                        </p>
+
+                        <p class="hero-text">
+                            <span class="label">Seller:</span>
+                            <a href="#" id="hero-seller-link" class="seller-link"></a>
+                        </p>
+
+                        <p class="hero-text">
+                            <span class="label">Rating:</span>
+                            <span id="hero-rating"></span>
+                        </p>
+
+                        <!-- Buttons -->
+                        <div class="hero-cta">
+                            <button class="btn-primary" id="home-shop-more">SHOP MORE</button>
+                            <button class="btn-primary" id="home-buy-now">BUY NOW</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right arrow -->
+                <button class="hero-nav-btn" id="hero-next" aria-label="Next shoe">
+                    &#8250;
+                </button>
+
+            </div>
+        </section>
+
+    </main>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JS files -->
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: sell.html
+    Purpose: Allows sellers to list shoes for sale with form validation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Sell Shoes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+
+    <!-- Search bar (not used on this page) -->
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search shoes...">
+    </div>
+
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link" href="login.html">Login</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Category navigation -->
+<nav class="category-nav" aria-label="Category navigation">
+    <ul>
+        <li><a href="men.html">Men's Shoes</a></li>
+        <li><a href="women.html">Women's Shoes</a></li>
+        <li><a href="kids.html">Kid's Shoes</a></li>
+        <li><a href="sell.html"><strong>Sell on Jutta</strong></a></li>
+    </ul>
+</nav>
+
+<div class="page-wrapper">
+    <main id="main">
+        <section class="main-card">
+
+            <!-- Page heading -->
+            <h2>Sell Your Shoes on Jutta</h2>
+            <p id="sell-status" style="font-size:0.9rem;"></p>
+
+            <!-- Seller details (inserted via JS) -->
+            <h3>Seller Information</h3>
+            <p id="seller-info"></p>
+
+            <!-- Listing form -->
+            <h3>New Listing</h3>
+            <form id="sell-form" novalidate>
+
+                <!-- Shoe name -->
+                <div>
+                    <label for="sell-name">Shoe Name*:</label>
+                    <input type="text" id="sell-name" required minlength="3" aria-describedby="sellNameErr">
+                    <div id="sellNameErr" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <!-- Price -->
+                <div>
+                    <label for="sell-price">Price*:</label>
+                    <input type="number" id="sell-price" min="1" step="0.01" required aria-describedby="sellPriceErr">
+                    <div id="sellPriceErr" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <!-- Category -->
+                <div>
+                    <label for="sell-cat">Category*:</label>
+                    <select id="sell-cat" required aria-describedby="sellCatErr">
+                        <option value="">-- Select --</option>
+                        <option value="men">Men</option>
+                        <option value="women">Women</option>
+                        <option value="kids">Kids</option>
+                    </select>
+                    <div id="sellCatErr" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <!-- Location -->
+                <div>
+                    <label for="sell-location">Location*:</label>
+                    <input type="text" id="sell-location" required minlength="2" aria-describedby="sellLocErr">
+                    <div id="sellLocErr" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <!-- Image URL -->
+                <div>
+                    <label for="sell-img">Image URL:</label>
+                    <input type="url" id="sell-img" placeholder="https://example.com/shoe.png">
+                </div>
+
+                <!-- Description -->
+                <div>
+                    <label for="sell-desc">Description*:</label>
+                    <textarea id="sell-desc" required minlength="10" aria-describedby="sellDescErr"></textarea>
+                    <div id="sellDescErr" class="error-message" aria-live="polite"></div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn-primary">Create Listing</button>
+
+            </form>
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JS files -->
+<script src="js/common.js"></script>
+<script src="js/sell.js"></script>
+
+</body>
+</html>

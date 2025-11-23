@@ -1,0 +1,83 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: cart.html
+    Purpose: Displays all items added to the cart and shows the total price.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+
+<!-- Skip directly to main content -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+
+    <!-- Search bar (not used here but kept for layout consistency) -->
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search shoes...">
+    </div>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link" href="login.html">Login</a></li>
+            <li><a class="nav-btn-link active" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-wrapper">
+    <main id="main">
+        <section class="main-card">
+
+            <h2 class="cart-title">Shopping Cart</h2>
+
+            <!-- Cart items will appear here -->
+            <div id="cart-items" aria-live="polite"></div>
+
+            <!-- Total row -->
+            <div class="cart-total-row" style="margin-top: 1.5rem; font-size: 1.2rem;">
+                <span>Total:</span>
+                <span id="cart-total">$0</span>
+            </div>
+
+            <!-- Checkout button -->
+            <div style="text-align:center; margin-top:2rem;">
+                <button class="btn-primary"
+                        onclick="window.location.href='checkout.html'"
+                        style="padding:0.7rem 2rem; font-size:1rem;">
+                    PROCEED TO CHECKOUT
+                </button>
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Main JS files -->
+<script src="js/common.js"></script>
+<script src="js/cart.js"></script>
+
+</body>
+</html>

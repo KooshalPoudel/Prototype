@@ -1,0 +1,112 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: register.html
+    Purpose: Allows new users to create an account with validation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+
+    <!-- Search bar (non-functional on this page) -->
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search shoes...">
+    </div>
+
+    <!-- Navigation -->
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link active" href="register.html">Register</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-wrapper">
+    <main id="main">
+
+        <section class="auth-card">
+            <h1 class="auth-title">Jutta</h1>
+            <h2 class="auth-sub">Create Account</h2>
+
+            <!-- Registration form -->
+            <form id="reg-form" class="auth-form" novalidate>
+
+                <!-- First Name -->
+                <input type="text" id="reg-first" placeholder="First Name *" required minlength="3">
+                <div id="regFirstErr" class="error-message"></div>
+
+                <!-- Last Name -->
+                <input type="text" id="reg-last" placeholder="Last Name *" required minlength="3">
+                <div id="regLastErr" class="error-message"></div>
+
+                <!-- Phone -->
+                <input type="text" id="reg-phone" placeholder="Phone Number *" required minlength="10">
+                <div id="regPhoneErr" class="error-message"></div>
+
+                <!-- Username -->
+                <input type="text" id="reg-user" placeholder="Username *" required minlength="3">
+                <div id="regUserErr" class="error-message"></div>
+
+                <!-- Email -->
+                <input type="email" id="reg-email" placeholder="Email *" required>
+                <div id="regEmailErr" class="error-message"></div>
+
+                <!-- Password -->
+                <input type="password" id="reg-pass" placeholder="Password *" required minlength="12">
+                <div class="password-rule">At least 12 characters, 1 uppercase letter, 1 number & 1 symbol.</div>
+                <div id="regPassErr" class="error-message"></div>
+
+                <!-- Role selection -->
+                <select id="reg-role" required>
+                    <option value="">Role *</option>
+                    <option value="buyer">Buyer</option>
+                    <option value="seller">Seller</option>
+                </select>
+                <div id="regRoleErr" class="error-message"></div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn-primary auth-btn">Create Account</button>
+
+                <!-- Link to Login -->
+                <button type="button" class="auth-secondary-btn" onclick="location.href='login.html'">
+                    Already registered? Login
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<!-- JS files -->
+<script src="js/common.js"></script>
+<script src="js/register.js"></script>
+
+</body>
+</html>

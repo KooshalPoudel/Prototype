@@ -1,0 +1,130 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: checkout.html
+    Purpose: Allows the user to enter billing and payment details and complete their order.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Checkout - Jutta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+
+<!-- Skip link for accessibility -->
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-wrapper" style="display:flex; justify-content:center;">
+    <main id="main">
+
+        <section class="auth-card">
+            <h1 class="auth-title">Checkout</h1>
+            <h2 class="auth-sub" style="margin-bottom: 1rem;">Complete Your Order</h2>
+
+            <!-- Shows order total -->
+            <h3 style="text-align:left;">Order Summary</h3>
+            <p id="checkout-total" style="font-size:1.1rem; font-weight:600; text-align:left;"></p>
+
+            <!-- Checkout form -->
+            <form id="checkoutForm" class="auth-form">
+
+                <h3 style="text-align:left;">Billing Details</h3>
+
+                <input type="text" id="chk-name" placeholder="Full Name *" required minlength="3">
+                <input type="email" id="chk-email" placeholder="Email *" required>
+                <input type="text" id="chk-phone" placeholder="Phone Number *" required minlength="10">
+                <textarea id="chk-address" placeholder="Address *" required minlength="10"></textarea>
+
+                <h3 style="text-align:left;">Payment Details</h3>
+
+                <input type="text" id="chk-card" placeholder="Card Number *" required minlength="16">
+                <input type="text" id="chk-exp" placeholder="Expiry (MM/YY) *" required minlength="4">
+                <input type="password" id="chk-cvv" placeholder="CVV *" required minlength="3">
+
+                <button type="submit" class="btn-primary" style="margin-top:1rem;">
+                    PAY NOW
+                </button>
+            </form>
+
+        </section>
+
+    </main>
+</div>
+
+<!-- Shared JS -->
+<script src="js/common.js"></script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+        // Calculate the cart total
+        let total = 0;
+        state.cart.forEach(item => {
+            const p = state.products.find(prod => prod.id === item.productId);
+            if (p) total += p.price * item.qty;
+        });
+
+        document.getElementById("checkout-total").textContent =
+            "Total Amount: $" + total;
+
+        // Form submit handler
+        document.getElementById("checkoutForm").addEventListener("submit", e => {
+            e.preventDefault();
+
+            // Collect user input
+            const name = document.getElementById("chk-name").value.trim();
+            const email = document.getElementById("chk-email").value.trim();
+            const phone = document.getElementById("chk-phone").value.trim();
+            const address = document.getElementById("chk-address").value.trim();
+            const card = document.getElementById("chk-card").value.trim();
+            const exp = document.getElementById("chk-exp").value.trim();
+            const cvv = document.getElementById("chk-cvv").value.trim();
+
+            // Basic validation
+            if (!name || !email || !phone || !address || !card || !exp || !cvv) {
+                alert("Please fill all fields correctly.");
+                return;
+            }
+
+            // Create receipt object
+            const receipt = {
+                name,
+                email,
+                phone,
+                address,
+                cardLast4: card.slice(-4),
+                total
+            };
+
+            // Save receipt
+            localStorage.setItem("jutta_receipt", JSON.stringify(receipt));
+
+            // Empty the cart
+            state.cart = [];
+            saveState(state);
+
+            // Redirect to the receipt page
+            window.location.href = "receipt.html";
+        });
+
+    });
+</script>
+
+</body>
+</html>

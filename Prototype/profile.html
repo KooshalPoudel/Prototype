@@ -1,0 +1,62 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: profile.html
+    Purpose: Displays user profile details and shows login/logout options dynamically.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Search shoes...">
+    </div>
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link" href="login.html">Login</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-wrapper">
+    <main id="main">
+        <section class="main-card">
+            <h2>Profile</h2>
+            <div id="profile-content"></div>
+            <div id="profile-actions" style="margin-top: 1.5rem; text-align: center;">
+                <!-- JS will inject Login / Logout / nothing -->
+            </div>
+
+        </section>
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/profile.js"></script>
+
+</body>
+</html>

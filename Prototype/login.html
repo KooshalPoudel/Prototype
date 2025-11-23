@@ -1,0 +1,92 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: login.html
+    Purpose: Provides login functionality for buyers and sellers with validation.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Jutta - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header>
+    <div class="logo">Jutta</div>
+    
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a class="nav-btn-link" href="index.html">Home</a></li>
+            <li><a class="nav-btn-link active" href="login.html">Login</a></li>
+            <li><a class="nav-btn-link" href="cart.html">Cart</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="page-wrapper">
+    <main id="main">
+
+        <section class="auth-card">
+            <h1 class="auth-title">Jutta</h1>
+            <h2 class="auth-sub">Login</h2>
+
+            <form id="login-form" class="auth-form" novalidate>
+
+                <!-- NEW ROLE SELECTION -->
+                <select id="log-role" required>
+                    <option value="">Role *</option>
+                    <option value="buyer">Buyer</option>
+                    <option value="seller">Seller</option>
+                </select>
+                <div id="logRoleErr" class="error-message"></div>
+
+                <!-- Username -->
+                <input type="text" id="log-user" placeholder="Username *" required minlength="3">
+                <div id="logUserErr" class="error-message"></div>
+
+                <!-- Password -->
+                <input type="password" id="log-pass" placeholder="Password *" required minlength="6">
+                <div id="logPassErr" class="error-message"></div>
+
+                <!-- Login Button -->
+                <button type="submit" class="btn-primary auth-btn">Login</button>
+
+                <!-- Forgot Password -->
+                <button type="button" class="auth-forgot-btn" onclick="alert('Password reset feature coming soon!')">
+                    Forgot Password?
+                </button>
+
+                <!-- Register Button -->
+                <button type="button" class="auth-secondary-btn" onclick="location.href='register.html'">
+                    Not registered? Create Account
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+</div>
+
+<footer>
+    <div class="footer-inner">
+        <div>© 2025 Jutta. All rights reserved.</div>
+        <div class="footer-links">
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
+        </div>
+    </div>
+</footer>
+
+<script src="js/common.js"></script>
+<script src="js/login.js"></script>
+
+</body>
+</html>

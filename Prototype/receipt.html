@@ -1,0 +1,73 @@
+<!-- 
+    Group Name: NextGenDevelopers
+    Project Chosen: Online Marketplace
+    Author: Kushal Poudel, Alok Poudel, Rojal Shrestha, Pawan Rijal
+    Date: 11/22/2025
+    Filename: receipt.html
+    Purpose: Shows the user's payment receipt and allows printing.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Receipt - Jutta</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/jutta.css">
+</head>
+<body>
+
+<!-- Header with logo -->
+<header>
+    <div class="logo">Jutta</div>
+</header>
+
+<div class="page-wrapper">
+    <main>
+        <section class="main-card">
+
+            <!-- Receipt heading -->
+            <h2>Payment Receipt</h2>
+
+            <!-- Receipt details inserted by JavaScript -->
+            <p id="receipt-content" style="font-size:1rem;"></p>
+
+            <!-- Print button -->
+            <button class="btn-primary" onclick="window.print()">Print Receipt</button>
+            <br><br>
+
+            <!-- Back to home -->
+            <button class="btn-primary" onclick="window.location.href='index.html'">Back to Home</button>
+
+        </section>
+    </main>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Get stored receipt data
+        const data = JSON.parse(localStorage.getItem("jutta_receipt"));
+
+        // If no data found
+        if (!data) {
+            document.getElementById("receipt-content").textContent = "No receipt found.";
+            return;
+        }
+
+        // Write receipt information
+        document.getElementById("receipt-content").innerHTML = `
+            <strong>Name:</strong> ${data.name}<br>
+            <strong>Email:</strong> ${data.email}<br>
+            <strong>Phone:</strong> ${data.phone}<br>
+            <strong>Address:</strong> ${data.address}<br><br>
+
+            <strong>Total Paid:</strong> $${data.total}<br>
+            <strong>Card Used:</strong> **** **** **** ${data.cardLast4}<br>
+            <strong>Date:</strong> ${new Date().toLocaleString()}<br>
+            <strong>Transaction ID:</strong> TXN-${Math.floor(Math.random() * 900000 + 100000)}
+        `;
+    });
+</script>
+
+</body>
+</html>
